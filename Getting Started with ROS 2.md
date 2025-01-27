@@ -19,7 +19,7 @@ There are 3 main ways to pass messages:
 
 ### Packages
 
-- One or more more nodes with build instructions. Supports multiple languages. Supports code reuse between developers.
+* One or more more nodes with build instructions. Supports multiple languages. Supports code reuse between developers.
 
 ### Tooling
 
