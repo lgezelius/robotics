@@ -1,15 +1,15 @@
-## Getting Started with ROS 2 Notes
+# Getting Started with ROS 2 Notes
 
 Video: [Getting Started with ROS 2](https://www.youtube.com/watch?v=8aoFndU7jos)
 
-### ROS 2
+## ROS 2
 
 ROS 2 is a framework for robots. It lets you divide your software into nodes, which are responsible for each part of the robot. 
 One node can represent the whole robot. 
 Nodes makes it easier to add additional sensors later.
 Nodes communicate with each other by passing messages.
 
-#### Message Passing
+### Message Passing
 
 There are 3 main ways to pass messages:
 
@@ -17,11 +17,11 @@ There are 3 main ways to pass messages:
 - Services (request/response model). Request and wait for response.
 - Actions (request/feedback/response model). Can receive 0 to many feedback messages before response.
 
-#### Packages
+### Packages
 
 - One or more more nodes with build instructions. Supports multiple languages. Supports code reuse between developers.
 
-#### Tooling
+### Tooling
 
 - Recording: Record messages into a rosbag. You can replay the message on your computer.
 - Logging
