@@ -27,3 +27,11 @@ There are 3 main ways to pass messages:
 - Logging
 - Visualization
 - Tf Library: transformation library. For example, you can automatically figure out location of a gripper in relation to an object viewed by the camera.
+
+### Practical Examples
+
+SLAM (Simultaneous Localization and Mapping) - Turtlebot robot knows its location and maps its environment. Simple for ROS 2 because it knows Turtlebot.
+
+### How to Proceed
+
+Go through ROS 2 tutorials. Use Turtlebot simulator.
