@@ -13,9 +13,9 @@ Nodes communicate with each other by passing messages.
 
 There are 3 main ways to pass messages:
 
-- Topics (publish/subscribe model). There are many message types. But a topic, must use only one message type. A topic can have multiple sender and receiver nodes.
-- Services (request/response model). Request and wait for response.
-- Actions (request/feedback/response model). Can receive 0 to many feedback messages before response.
+* Topics (publish/subscribe model). There are many message types. But a topic, must use only one message type. A topic can have multiple sender and receiver nodes.
+* Services (request/response model). Request and wait for response.
+* Actions (request/feedback/response model). Can receive 0 to many feedback messages before response.
 
 ### Packages
 
@@ -23,10 +23,10 @@ There are 3 main ways to pass messages:
 
 ### Tooling
 
-- Recording: Record messages into a rosbag. You can replay the message on your computer.
-- Logging
-- Visualization
-- Tf Library: transformation library. For example, you can automatically figure out location of a gripper in relation to an object viewed by the camera.
+* Recording: Record messages into a rosbag. You can replay the message on your computer.
+* Logging
+* Visualization
+* Tf Library: transformation library. For example, you can automatically figure out location of a gripper in relation to an object viewed by the camera.
 
 ### Practical Examples
 
