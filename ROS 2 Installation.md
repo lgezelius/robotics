@@ -8,7 +8,7 @@ ROS 2 Jazzy Jelasco's primary target is Ubuntu Linux - Noble Numbat (24.04).
 
 For a developer with an M-Chip MacBook, a good option is VMware Fusion Pro (free for personal use) and the [Ubuntu 24.04 64-bit ARM (ARMv8/AArch64) desktop image](https://cdimage.ubuntu.com/daily-live/20240421/).
 
-Create a New Virtual Machine.
+Create a New Virtual Machine using the ISO.
 
     Virtual Machine Summary
     Guest Operating System Ubuntu 64-bit Arm 24.04
@@ -22,6 +22,10 @@ Don't select "Use Active Directory". It is overkill for personal use.
 When prompted to set a hostname, don't include any periods in it.
 
 If necessary, shutdown the VM to set the startup disk to Hard Disk (NVMe) and disconnect the CD/DVD Drive.
+
+Set the Blank Screen Delay to Never.
+
+    gsettings set org.gnome.desktop.session idle-delay 0
 
 Enable clipboard sharing between host and the VM.
 
@@ -81,3 +85,28 @@ Finally install the Desktop:
 
     sudo apt install ros-jazzy-desktop -y
 
+### Test Installation
+
+In one terminal:
+
+    source /opt/ros/jazzy/setup.bash
+    ros2 run demo_nodes_cpp talker
+
+In another terminal:
+
+    source /opt/ros/jazzy/setup.bash
+    ros2 run demo_nodes_py listener
+
+## Configure Environment
+
+Add sourcing to shell startup script.
+
+    echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+
+Set the ROS domain ID to 0 because the numbers between 0 and 101, inclusive, are safe.
+
+    echo "export ROS_DOMAIN_ID=0" >> ~/.bashrc
+
+Test in a new shell by checking for ROS environment variables.
+
+    printenv | grep -i ROS
