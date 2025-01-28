@@ -17,13 +17,16 @@ Create a New Virtual Machine using the ISO.
     Networking Share with my Mac (NAT)
     Device Summary 2 CPU cores, CD/DVD, USB Controller, Sound Card
 
-Don't select "Use Active Directory". It is overkill for personal use.
+If this VM is used for personal use, don't select "Use Active Directory". It is overkill for personal use.
 
 When prompted to set a hostname, don't include any periods in it.
 
-Shutdown the VM.
-Set the startup disk to Hard Disk (NVMe) and disconnect the CD/DVD Drive.
-Under Displays, enable "Accelerate 3D Graphics" and "Use full resolution for Retina display."
+Shutdown the VM and to the following:
+
+    * Go to Settings.../Startup Disk and select Hard Disk (NVMe).
+    * Go to Settings.../CD/DVD Drive and disconnect the CD/DVD Drive.
+    * Go to Settings.../Displays, enable "Accelerate 3D Graphics".
+    * Optional: Change Network Adapter to Bridged (Autodetect). This puts the VM directly on your network, accessible by all other devices on your network.
 
 Set the Blank Screen Delay to Never.
 
