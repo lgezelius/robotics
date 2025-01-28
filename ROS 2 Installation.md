@@ -123,3 +123,9 @@ Qt (pronounced “cute”) is a cross-platform software development framework us
 Test in a new shell by checking for ROS environment variables.
 
     printenv | grep -i ROS
+
+## Install GUI Tools
+
+Install RQt. RQt is a graphical user interface framework that implements various tools and interfaces in the form of plugins.
+
+    sudo apt install '~nros-jazzy-rqt*' -y
