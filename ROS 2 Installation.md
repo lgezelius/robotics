@@ -21,7 +21,9 @@ Don't select "Use Active Directory". It is overkill for personal use.
 
 When prompted to set a hostname, don't include any periods in it.
 
-If necessary, shutdown the VM to set the startup disk to Hard Disk (NVMe) and disconnect the CD/DVD Drive.
+Shutdown the VM.
+Set the startup disk to Hard Disk (NVMe) and disconnect the CD/DVD Drive.
+Under Displays, enable "Accelerate 3D Graphics" and "Use full resolution for Retina display."
 
 Set the Blank Screen Delay to Never.
 
@@ -53,6 +55,10 @@ Install an SSH server:
 Now you should be able to SSH from the host, for example if the user name is larry on both host and VM, and the hostname is ubuntu-2404:
 
     ssh ubuntu-2404.local
+
+Install utilities for Mesa 3D Graphics Library.
+
+    sudo apt install mesa-utils -y
 
 ### Install ROS 2
 
