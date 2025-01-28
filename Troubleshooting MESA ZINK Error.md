@@ -42,4 +42,4 @@ Stopped VM. Enabled Accelerate 3D Graphics.
     [INFO] [1738046459.745420261] [turtlesim]: Starting turtlesim with node name /turtlesim
     [INFO] [1738046459.754937178] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
 
-Updated Installation docus to include meta-utils and 3D Graphics acceleration.
+Updated Installation doc to include meta-utils and 3D Graphics acceleration.
