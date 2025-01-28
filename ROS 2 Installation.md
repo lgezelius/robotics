@@ -113,6 +113,13 @@ Set the ROS domain ID to 0 because the numbers between 0 and 101, inclusive, are
 
     echo "export ROS_DOMAIN_ID=0" >> ~/.bashrc
 
+Set the Qt Platform Abstraction (QPA) to X11 instead of Wayland.
+Wayland causes errors in some ROS 2 GUI utilities such as RQt.
+Wayland is used by Ubuntu 22.04+.
+Qt (pronounced “cute”) is a cross-platform software development framework used for building graphical user interfaces (GUIs) and other applications.
+
+    echo "export QT_QPA_PLATFORM=xcb" >> ~/.bashrc
+
 Test in a new shell by checking for ROS environment variables.
 
     printenv | grep -i ROS
