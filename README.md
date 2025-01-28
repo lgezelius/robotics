@@ -2,12 +2,11 @@
 
 ## Learn
 
-* [Getting Started with ROS 2](./Getting%20Started%20with%20ROS%202.md)
-* [ROS 2 Jazzy Jalesco Tutorials](https://docs.ros.org/en/jazzy/Tutorials.html)
+1. Get an Overview: [Getting Started with ROS 2](./Getting%20Started%20with%20ROS%202.md)
 
-## Develop
+2. Install the primary environment: [ROS 2 Installation](./ROS%202%20Installation.md)
 
-* [ROS 2 Installation](./ROS%202%20Installation.md)
+3. Go through the official tutorials: [ROS 2 Jazzy Jalesco Tutorials](https://docs.ros.org/en/jazzy/Tutorials.html)
 
 ## Kits
 
