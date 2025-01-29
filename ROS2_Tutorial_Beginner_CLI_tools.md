@@ -1,6 +1,6 @@
 # ROS 2 Tutorial - Beginner: CLI tools
 
-- TOC {:toc}
+
 
 ## Using turtlesim, ros2, and rqt
 
