@@ -1,5 +1,7 @@
 # ROS 2 Tutorial: Using turtlesim, ros2, and rqt
 
+Notes for <https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html>.
+
 Create the first node.
 
     ros2 run turtlesim turtlesim_node
