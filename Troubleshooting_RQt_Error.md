@@ -1,6 +1,6 @@
 # Troubleshooting RQt Error
 
-While following <https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html>, the following occured:
+In Ubuntu 64-bit Arm 24.04 VM, while following <https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html>, the following occured:
 
     $ rqt
     QSocketNotifier: Can only be used with threads started with QThread
