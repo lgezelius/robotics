@@ -135,7 +135,7 @@ Install dev tools.
 
     sudo apt install python3-colcon-common-extensions -y
 
-## File Sharing (Optional, Not Recommended)
+## Shared Folders (Optional, Not Recommended)
 
 If you are going to use another computer for code editing (e.g. using VS Code), and that computer is the host of the ROS 2 VM, do the following:
 
