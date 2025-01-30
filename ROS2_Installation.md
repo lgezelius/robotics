@@ -79,10 +79,6 @@ Enable required repos:
     sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
-Skip the following (with the assumption that development can be done on Mac)
-
-    sudo apt update && sudo apt install ros-dev-tools -y
-
 Update repo caches and upgrade :
 
     sudo apt update && sudo apt upgrade -y
@@ -130,3 +126,20 @@ Test in a new shell by checking for ROS environment variables.
 Install RQt. RQt is a graphical user interface framework that implements various tools and interfaces in the form of plugins.
 
     sudo apt install '~nros-jazzy-rqt*' -y
+
+## Development
+
+Install dev tools.
+
+    sudo apt install python3-colcon-common-extensions -y
+
+If you are going to use another computer for code editing (e.g. using VS Code), and that computer is the host of the ROS 2 VM, do the following:
+
+1. Create a directory named ros2_workspaces under your development directory on your host.
+
+2. Enable Shared Folders for the VM, and add the ros2_workspaces folder. It will be mounted at /mnt/hgfs/ros2_workspaces. HGFS is host guest file system.
+
+3. On the VM, create a symlink from your home directory to /mnt/hgfs/ros2_workspaces.
+
+        ln -s /mnt/hgfs/ros2_workspaces ~/ros2_workspaces
+
