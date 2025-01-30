@@ -258,3 +258,19 @@ This is a bit confusing because both teleop_turtle nodes have the same name:
     /teleop_turtle
     /teleop_turtle
     /turtlesim
+
+## Launching nodes
+
+In a terminal:
+
+    ros2 topic pub  /turtlesim1/turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}"
+
+In antoher terminal:
+
+    ros2 topic pub  /turtlesim2/turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: -1.8}}"
+
+In this case two turtelsim nodes are created, and each has a turtle1 instance. /turtlesim1 and /turtlesim2 are namespaces.
+
+    $ ros2 node list
+    /turtlesim1/turtlesim
+    /turtlesim2/turtlesim
