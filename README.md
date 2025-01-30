@@ -8,7 +8,7 @@
 
 3. Install the primary environment: [ROS 2 Installation](ROS2_Installation.md)
 
-4. Go through the official tutorials: [ROS 2 Jazzy Jalesco Tutorials](https://docs.ros.org/en/jazzy/Tutorials.html)
+4. Go through the official tutorials: [ROS 2 Tutorials](ROS2_Tutorials.md)
 
 ## Kits
 
