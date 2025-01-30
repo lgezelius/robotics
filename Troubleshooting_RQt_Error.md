@@ -1,4 +1,4 @@
-# Troubleshooting RQt
+# Troubleshooting RQt Error
 
 While following <https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html>, the following occured:
 
@@ -15,6 +15,6 @@ ChatGPT says that one option is to use X11 instead of Wayland, which is the defa
 
 Apparently this issue can also affect Rvis and Gazebo, though those were not tried at the time of troubleshooting the RQT issue. Tried the following fix per <https://wiki.t-firefly.com/en/Firefly-Linux-Guide/ros.html> which was in line with ChatGPT's fix suggestion.
 
-  echo "export QT_QPA_PLATFORM=xcb" >> ~/.bashrc
+    echo "export QT_QPA_PLATFORM=xcb" >> ~/.bashrc
 
 Closed terminal that invoked RQT and then started RQT in a new terminal. All warnings and errors resolved.
