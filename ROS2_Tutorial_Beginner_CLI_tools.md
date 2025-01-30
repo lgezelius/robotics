@@ -1,7 +1,5 @@
 # ROS 2 Tutorial - Beginner: CLI tools
 
-
-
 ## Using turtlesim, ros2, and rqt
 
 Notes for <https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html>.
