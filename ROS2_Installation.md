@@ -4,7 +4,7 @@
 
 ROS 2 Jazzy Jelasco's primary target is Ubuntu Linux - Noble Numbat (24.04).
 
-### Install Ubuntu 20.04 VM
+### Install Ubuntu 24.04 VM
 
 For a developer with an M-series chip MacBook, a good option is VMware Fusion Pro (free for personal use) and the [Ubuntu 24.04 64-bit ARM (ARMv8/AArch64) desktop image](https://cdimage.ubuntu.com/daily-live/20240421/).
 
@@ -20,6 +20,8 @@ Create a New Virtual Machine using the ISO.
 If this VM is used for personal use, don't select "Use Active Directory". It is overkill for personal use.
 
 When prompted to set a hostname, don't include any periods in it.
+
+Note: git is apparently pre-installed.
 
 Shutdown the VM and to the following:
 
@@ -132,6 +134,8 @@ Install RQt. RQt is a graphical user interface framework that implements various
 Install dev tools.
 
     sudo apt install python3-colcon-common-extensions -y
+
+## File Sharing (Optional, Not Recommended)
 
 If you are going to use another computer for code editing (e.g. using VS Code), and that computer is the host of the ROS 2 VM, do the following:
 
