@@ -135,6 +135,35 @@ Install dev tools.
 
     sudo apt install python3-colcon-common-extensions -y
 
+    
+
+## Set up colcon_cd
+
+Modify ~/.bashrc.
+
+    echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
+    echo "export _colcon_cd_root=/opt/ros/jazzy/" >> ~/.bashrc
+
+## Set up colcon tab completion
+
+    echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
+
+## Install Default Colcon Mixins
+
+    colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+    colcon mixin update default
+
+## BASH Shell Environment Customizations
+
+The last six lines of ~/.bashrc should read as follows:
+
+    source /opt/ros/jazzy/setup.bash
+    export ROS_DOMAIN_ID=0
+    export QT_QPA_PLATFORM=xcb
+    source /usr/share/colcon_cd/function/colcon_cd.sh
+    export _colcon_cd_root=/opt/ros/jazzy/
+    source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+
 ## Shared Folders (Optional, Not Recommended)
 
 If you are going to use another computer for code editing (e.g. using VS Code), and that computer is the host of the ROS 2 VM, do the following:
@@ -146,4 +175,3 @@ If you are going to use another computer for code editing (e.g. using VS Code), 
 3. On the VM, create a symlink from your home directory to /mnt/hgfs/ros2_workspaces.
 
         ln -s /mnt/hgfs/ros2_workspaces ~/ros2_workspaces
-
