@@ -45,7 +45,9 @@ The tutorial asks you to create the same ~/ros2_ws/src directory as in the previ
     rm: remove write-protected regular file '/home/larry/ros2_ws/src/examples/.git/objects/pack/pack-3316a67d22a752815959eeb652211065250579ac.pack'? y
     rm: remove write-protected regular file '/home/larry/ros2_ws/src/examples/.git/objects/pack/pack-3316a67d22a752815959eeb652211065250579ac.idx'? y
 
-### 4 Resolve dependencies
+### Tasks
+
+#### 4 Resolve dependencies
 
 The following occured when trying to resolve dependencies. This should be a one-time occurence.
 
@@ -94,7 +96,7 @@ The following occured when trying to resolve dependencies. This should be a one-
     ~/ros2_ws$ rosdep install -i --from-path src --rosdistro jazzy -y
     #All required rosdeps installed successfully
 
-### 5 Build the workspace with colcon
+#### 5 Build the workspace with colcon
 
     $ colcon build
     [0.243s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
@@ -111,7 +113,7 @@ The following occured when trying to resolve dependencies. This should be a one-
 
     Summary: 1 package finished [27.7s]
 
-### 6 Source the overlay
+#### 6 Source the overlay
 
 You don't need to source the underlay, because that is done automatically in each bash terminal session by ~./bashrc, but you do need to source the overlay:
 
@@ -122,6 +124,13 @@ You have to run the following from Ubuntu Desktop:
 
     ros2 run turtlesim turtlesim_node
 
-### 7 Modify the overlay
+#### 7 Modify the overlay
 
 This is the first opportunity to use VS Code to make a change! Install extensions recommended by VS Code.
+
+## Creating a package
+
+Catkin and Ament are build systems for ROS 1 and ROS 2 respectively. (A catkin and an ament are both names for a type of flower cluster that is long and cylindrical.)
+
+## Writing a simple publisher and subscriber (C++)
+
