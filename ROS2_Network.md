@@ -8,7 +8,7 @@ This Ubuntu LTS computer or virtual machine contains the full installation of RO
 
 ## IDE
 
-An IDE, such as Visual Studio Code, can be installed on the Base, or another computer or virtual machine. If the Visual Studio Code is not on the Base, the "Remote - SSH" extension can be used to access the Base.
+An IDE, such as Visual Studio Code, can be installed on the Base, or another computer or virtual machine. If the Visual Studio Code is not on the Base, the "Remote - SSH" extension can be used to access the Base. (See [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh#_remember-hosts-and-advanced-settings) for more information.)
 
 ## Robots
 
