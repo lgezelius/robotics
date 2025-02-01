@@ -27,8 +27,8 @@ Shutdown the VM and to the following:
 
 * Go to Settings.../Startup Disk and select Hard Disk (NVMe).
 * Go to Settings.../CD/DVD Drive and disconnect the CD/DVD Drive.
-* Go to Settings.../Displays, enable "Accelerate 3D Graphics".
-* Optional: Change Network Adapter to Bridged (Autodetect). This puts the VM directly on your network, accessible by all other devices on your network.
+* Go to Settings.../Displays, enable "Accelerate 3D Graphics" and set "Shared Graphics memory" to 1024 MB.
+* Change Network Adapter to Bridged (Autodetect). This puts the VM directly on your network, accessible by all other devices on your network.
 
 Set the Blank Screen Delay to Never.
 
@@ -61,9 +61,15 @@ Now you should be able to SSH from the host, for example if the user name is lar
 
     ssh ubuntu-2404.local
 
+### Install MESA 3D Graphics Library Utilities
+
 Install utilities for Mesa 3D Graphics Library.
 
     sudo apt install mesa-utils -y
+
+To check for Graphic Library errors run:
+
+    glxinfo | grep -i error
 
 ### Install ROS 2
 
@@ -134,8 +140,6 @@ Install RQt. RQt is a graphical user interface framework that implements various
 Install dev tools.
 
     sudo apt install python3-colcon-common-extensions -y
-
-    
 
 ## Set up colcon_cd
 
