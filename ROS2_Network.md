@@ -4,7 +4,7 @@ The following configuration works well on a network that you control, such as a 
 
 ## Base
 
-This Ubuntu LTS computer or virtual machine contains the full installation of ROS2 and an SSH server. This computer needs to support GUI applications using X11 such as rqt and rviz. If the base is a laptop, it probably should not go to sleep when the display is off and it is on non-battery power.
+This Ubuntu LTS computer or virtual machine contains the full installation of ROS2 and an SSH server. This computer needs to support GUI applications using X11 such as rqt (GUI-based node debugging and visualization), rviz (3D robot visualization tool), and Gazebo (physics-based simulator for testing robots). If the base is a laptop, it probably should not go to sleep when the display is off and it is on non-battery power.
 
 ## IDE
 
@@ -12,4 +12,6 @@ An IDE, such as Visual Studio Code, can be installed on the Base, or another com
 
 ## Robots
 
-A robot, can include a Raspberry PI, running Ubuntu LTS with an installation of ROS2 and SSH server.
+A robot, can use a Raspberry PI as its controller, running Ubuntu LTS with an installation of ROS2 and SSH server.
+
+Other robot controller options include NVIDIA Jetson.

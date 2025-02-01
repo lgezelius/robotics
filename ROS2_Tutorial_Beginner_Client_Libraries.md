@@ -132,5 +132,4 @@ This is the first opportunity to use VS Code to make a change! Install extension
 
 Catkin and Ament are build systems for ROS 1 and ROS 2 respectively. (A catkin and an ament are both names for a type of flower cluster that is long and cylindrical.)
 
-## Writing a simple publisher and subscriber (C++)
-
+## Writing a simple service and client (Python)
