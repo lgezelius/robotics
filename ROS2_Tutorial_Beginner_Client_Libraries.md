@@ -126,10 +126,71 @@ You have to run the following from Ubuntu Desktop:
 
 #### 7 Modify the overlay
 
-This is the first opportunity to use VS Code to make a change! Install extensions recommended by VS Code.
+This is the first opportunity to use [VS Code](Visual_Studio_Code.md) to make a change!
 
 ## Creating a package
 
 Catkin and Ament are build systems for ROS 1 and ROS 2 respectively. (A catkin and an ament are both names for a type of flower cluster that is long and cylindrical.)
 
-## Writing a simple service and client (Python)
+## Creating custom msg and srv files
+
+### Tasks
+
+#### 3 CMakeLists.txt
+
+Add the new lines in the tutorial before if(BUILD_TESTING). If the new lines are added at the end of file, an error will occur later when doing a colcon build.
+
+#### 7.1 Testing Num.msg with pub/sub
+
+Edit the following:
+
+* ~/ros2_ws/src/py_pubsub/py_pubsub/publisher_member_function.py
+* ~/ros2_ws/src/py_pubsub/py_pubsub/py_pubsub/subscriber_member_function.py
+
+#### 7.2 Testing AddThreeInts.srv with service/client
+
+Edit the following:
+
+* ~/ros2_ws/src/py_srvcli/py_srvcli/service_member_function.py
+
+## Implementing custom interfaces
+
+"interfaces can currently only be defined in CMake packages"
+
+### Tasks
+
+#### 2.1 Build a msg file
+
+Adding these lines to package.xml is necessary only when the package defines custom messages, services, or actions. IDL stands for Interface Definition Language.
+
+<buildtool_depend>rosidl_default_generators</buildtool_depend>
+<exec_depend>rosidl_default_runtime</exec_depend>
+<member_of_group>rosidl_interface_packages</member_of_group>
+
+#### 3 Use an interface from the same package
+
+The following in src/more_interfaces/src/publish_address_book.cpp is highlighted as an error by VS Code:
+
+    #include "more_interfaces/msg/address_book.hpp"
+
+Running the VS Code command "ROS: Update C++ Properties" addressed this Intellisense error.
+
+#### 4 Try it out
+
+Instead of typing this in a new terminal:
+
+    source install/local_setup.bash
+    ros2 run more_interfaces publish_address_book
+
+You can run the "ROS: Run a ROS executable (rosrun)" command in VS Code, and it will prompt for package name, executable name and arguments.
+
+Then instead of typing this in a new terminal:
+
+    source install/setup.bash
+    ros2 topic echo /address_book
+
+You can run the "ROS: Create Terminal" command in VS Code, and type the following:
+
+    ros2 topic echo /address_book
+
+Notice that in both cases, sourcing of install/setup.bash is done for you.
