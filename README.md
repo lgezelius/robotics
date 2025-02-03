@@ -6,7 +6,7 @@
 
 2. Review prerequisites: [Five Things You Need Before Starting With ROS](Five_Things_You_Need_Before_Starting_With_ROS.md)
 
-3. Install the primary environment: [ROS 2 Installation](ROS2_Installation.md)
+3. Install the environment: [ROS 2 Installation](ROS2_Installation.md)
 
 4. Go through the official tutorials: [ROS 2 Tutorials](ROS2_Tutorials.md)
 
