@@ -1,10 +1,8 @@
 # ROS 2 Installation
 
-## Overview
-
 ROS 2 Jazzy Jelasco's primary target is Ubuntu Linux - Noble Numbat (24.04).
 
-### Install Ubuntu 24.04 VM
+## Install Ubuntu 24.04 VM
 
 For a developer with an M-series chip MacBook, a good option is VMware Fusion Pro (free for personal use) and the [Ubuntu 24.04 64-bit ARM (ARMv8/AArch64) desktop image](https://cdimage.ubuntu.com/daily-live/20240421/).
 
@@ -61,7 +59,7 @@ Now you should be able to SSH from the host, for example if the user name is lar
 
     ssh ubuntu-2404.local
 
-### Install MESA 3D Graphics Library Utilities
+## Install MESA 3D Graphics Library Utilities
 
 Install utilities for Mesa 3D Graphics Library.
 
@@ -71,7 +69,7 @@ To check for Graphic Library errors run:
 
     glxinfo | grep -i error
 
-### Install ROS 2
+## Install ROS 2
 
 See <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html> for full details.
 
@@ -96,7 +94,7 @@ Finally install the Desktop:
 
     sudo apt install ros-jazzy-desktop -y
 
-### Test Installation
+## Test Installation
 
 In one terminal:
 
@@ -168,14 +166,6 @@ The last six lines of ~/.bashrc should read as follows:
     export _colcon_cd_root=/opt/ros/jazzy/
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
-## Shared Folders (Optional, Not Recommended)
+## Visual Studio Code
 
-If you are going to use another computer for code editing (e.g. using VS Code), and that computer is the host of the ROS 2 VM, do the following:
-
-1. Create a directory named ros2_workspaces under your development directory on your host.
-
-2. Enable Shared Folders for the VM, and add the ros2_workspaces folder. It will be mounted at /mnt/hgfs/ros2_workspaces. HGFS is host guest file system.
-
-3. On the VM, create a symlink from your home directory to /mnt/hgfs/ros2_workspaces.
-
-        ln -s /mnt/hgfs/ros2_workspaces ~/ros2_workspaces
+You can now test connecting to your Ubuntu host from [VS Code](/Visual_Studio_Code.md).
