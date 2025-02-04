@@ -128,6 +128,11 @@ You have to run the following from Ubuntu Desktop:
 
 This is the first opportunity to use [VS Code](Visual_Studio_Code.md) to make a change!
 
+After you modify and test ~/ros2_ws/src/ros_tutorials/turtlesim/src/turtle_frame.cpp, you can run the following, so that you aren't prompted in VS code to commit and push the file.
+
+    cd ~/ros2_ws/src/ros_tutorials
+    git update-index --assume-unchanged turtlesim/src/turtle_frame.cpp
+
 ## Creating a package
 
 Catkin and Ament are build systems for ROS 1 and ROS 2 respectively. (A catkin and an ament are both names for a type of flower cluster that is long and cylindrical.)
@@ -194,3 +199,20 @@ You can run the "ROS: Create Terminal" command in VS Code, and type the followin
     ros2 topic echo /address_book
 
 Notice that in both cases, sourcing of install/setup.bash is done for you.
+
+## Using ros2doctor to identify issues
+
+    $ ros2 doctor 
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: controller_manager has been updated to a new version. local: 4.24.0 < latest: 4.25.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: hardware_interface has been updated to a new version. local: 4.24.0 < latest: 4.25.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: rqt_controller_manager has been updated to a new version. local: 4.24.0 < latest: 4.25.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: ros2_control_test_assets has been updated to a new version. local: 4.24.0 < latest: 4.25.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: controller_manager_msgs has been updated to a new version. local: 4.24.0 < latest: 4.25.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: controller_interface has been updated to a new version. local: 4.24.0 < latest: 4.25.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: rqt_joint_trajectory_controller has been updated to a new version. local: 4.19.0 < latest: 4.20.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: joint_limits has been updated to a new version. local: 4.24.0 < latest: 4.25.0
+    /opt/ros/jazzy/lib/python3.12/site-packages/ros2doctor/api/package.py: 122: UserWarning: realtime_tools has been updated to a new version. local: 3.1.0 < latest: 3.3.0
+
+    All 5 checks passed
+
+Possibly ROS2 packages are updated once a month. See <https://robotics.stackexchange.com/questions/98316/ros2-ros2-doctor-userwarning-pkg-has-been-updated-to-a-new-version>. The newer versions are listed in <https://github.com/ros/rosdistro/blob/master/jazzy/distribution.yaml>.
