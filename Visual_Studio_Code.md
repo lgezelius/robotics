@@ -1,5 +1,9 @@
 # Visual Studio Code
 
+If you have installed and use VS Code somewhere on the same network on which you installed your base ROS computer or VM, then you should plan on using that VS Code installation for ROS development.
+
+You should wait to do the following, until after you have created something in ~/ros2_ws/src, e.g. as you are going through the official tutorials.
+
 ## Remote - SSH by Microsoft
 
 If you accessing a remove host, install Remote - SSH by Microsoft Extension.
