@@ -166,6 +166,14 @@ The last six lines of ~/.bashrc should read as follows:
     export _colcon_cd_root=/opt/ros/jazzy/
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
+## Git Configuration
+
+    git config --global user.name <FULL_NAME>
+    git config --global user.email <EMAIL_ADDRESS>
+    git config --global core.editor "nano"
+
+TODO: Confirm that this sets the ros2 package.xml and package.cmake defaults.
+
 ## Visual Studio Code
 
 You can now test connecting to your Ubuntu host from [VS Code](/Visual_Studio_Code.md).
