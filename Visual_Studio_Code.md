@@ -46,3 +46,16 @@ Recommended in <https://www.youtube.com/watch?v=hf76VY0a5Fk> and in <https://aut
 ## CMAKE Tools by Microsoft
 
 ...
+
+## Flake8
+
+Linting support for Python. Used by ROS2 tests.
+
+Add the following to ~/ros2_ws/src/.vscode/settings.json:
+
+    ,
+    "flake8.args": [
+      "--max-line-length=99"
+    ]
+
+And also the same to ˜/ros2_ws/src/\<PACKAGE\>/.vscode/settings.json as required.
