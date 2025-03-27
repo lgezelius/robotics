@@ -39,13 +39,15 @@ Commands:
 
 ## C/C++ Extension Pack by Microsoft
 
-## CMAKE Extension by twxs
-
-Recommended in <https://www.youtube.com/watch?v=hf76VY0a5Fk> and in <https://automaticaddison.com/how-to-install-and-configure-visual-studio-code-for-ros-2/>.
-
 ## CMAKE Tools by Microsoft
 
 ...
+
+## CMAKE Extension by twxs
+
+This extension was recommended in <https://www.youtube.com/watch?v=hf76VY0a5Fk> and in <https://automaticaddison.com/how-to-install-and-configure-visual-studio-code-for-ros-2/>.
+
+VS Code now says that twxs.cmake should be uninstalled because CMAKE Tools now provides language services and no longer depends on this extension.
 
 ## Flake8
 
@@ -55,7 +57,9 @@ Add the following to ~/ros2_ws/src/.vscode/settings.json:
 
     ,
     "flake8.args": [
-      "--max-line-length=99"
+      "--max-line-length=99",
+      "--import-order-style=google",
+      "--extend-ignore=B902,C816,D100,D101,D102,D103,D104,D105,D106,D107,D203,D212,D404,I202"
     ]
 
 And also the same to ˜/ros2_ws/src/\<PACKAGE\>/.vscode/settings.json as required.
