@@ -31,9 +31,7 @@ To set local branch to match remote branch:
     upstream https://github.com/ros2/ros2cli.git (fetch)
     upstream https://github.com/ros2/ros2cli.git (push)
 
-## Build?
-
-Is this correct when only updating something in ros2cli?
+## Build
 
     cd ~/ros2_ws
     colcon build --packages-select ros2cli --allow-overriding ros2cli
@@ -43,6 +41,7 @@ Is this correct when only updating something in ros2cli?
 
     cd ~/ros2_ws/src
     mv ~/.gitconfig ~/.gitconfig_save
+    ros2 pkg create --build-type ament_python --license Apache-2.0 --maintainer-email "dduck@gmail.com" test_package_32
     ros2 pkg create --build-type ament_python --license Apache-2.0 --maintainer-name "Daffy Duck" test_package_33
     mv ~/.gitconfig_save ~/.gitconfig
 
