@@ -1,6 +1,7 @@
 # ROS 2 Installation
 
-ROS 2 Jazzy Jelasco's primary target is Ubuntu Linux - Noble Numbat (24.04).
+* ROS 2 Jazzy Jelasco's primary target is Ubuntu Linux - Noble Numbat (24.04).
+* ROS 2 Rolling Ridley is the development version.
 
 ## Install Ubuntu 24.04 VM
 
@@ -10,7 +11,7 @@ Create a New Virtual Machine using the ISO.
 
     Virtual Machine Summary
     Guest Operating System Ubuntu 64-bit Arm 24.04
-    New Hard Disk Capacity 20 GB
+    New Hard Disk Capacity 30 GB
     Memory 4 GB
     Networking Share with my Mac (NAT)
     Device Summary 2 CPU cores, CD/DVD, USB Controller, Sound Card
@@ -46,7 +47,9 @@ Install a service and utilities to support Apple's Zeroconf architecture, also k
 
     sudo apt install avahi-daemon avahi-utils -y
 
-Start and enable the Avahi service:
+Start and enable the Avahi service.
+Avahi implements the Apple Zeroconf specification, mDNS, DNS-SD and RFC 3927/IPv4LL.
+Multicast DNS (mDNS) is a computer networking protocol that resolves hostnames to IP addresses within small networks that do not include a local name server.
 
     sudo systemctl start avahi-daemon
     sudo systemctl enable avahi-daemon
@@ -71,7 +74,7 @@ To check for Graphic Library errors run:
 
 ## Install ROS 2
 
-See <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html> for full details.
+See <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html> or <https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Debs.html> for full details.
 
 Check for UTF-8:
 
@@ -94,6 +97,10 @@ Finally install the Desktop:
 
     sudo apt install ros-jazzy-desktop -y
 
+or
+
+    sudo apt install ros-rolling-desktop
+
 ## Test Installation
 
 In one terminal:
@@ -111,6 +118,10 @@ In another terminal:
 Add sourcing to shell startup script.
 
     echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+
+or
+
+    echo "source /opt/ros/rolling/setup.bash" >> ~/.bashrc
 
 Set the ROS domain ID to 0 because the numbers between 0 and 101, inclusive, are safe.
 
@@ -141,10 +152,15 @@ Install dev tools.
 
 ## Set up colcon_cd
 
-Modify ~/.bashrc.
+Modify ~/.bashrc for jazzy:
 
     echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
     echo "export _colcon_cd_root=/opt/ros/jazzy/" >> ~/.bashrc
+
+Or for rolling:
+
+    echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
+    echo "export _colcon_cd_root=/opt/ros/rolling/" >> ~/.bashrc
 
 ## Set up colcon tab completion
 
@@ -157,7 +173,7 @@ Modify ~/.bashrc.
 
 ## BASH Shell Environment Customizations
 
-The last six lines of ~/.bashrc should read as follows:
+The last six lines of ~/.bashrc should read as follows when using jazzy:
 
     source /opt/ros/jazzy/setup.bash
     export ROS_DOMAIN_ID=0
@@ -168,12 +184,59 @@ The last six lines of ~/.bashrc should read as follows:
 
 ## Git Configuration
 
-    git config --global user.name <FULL_NAME>
-    git config --global user.email <EMAIL_ADDRESS>
+    git config --global user.name "<FULL_NAME>"
+    git config --global user.email "<EMAIL_ADDRESS>"
     git config --global core.editor "nano"
 
-TODO: Confirm that this sets the ros2 package.xml and package.cmake defaults.
+The global git user.email will be used by jazzy's "ros2 pkg create", however the user.name value will not be used for the maintainer name. The maintainer name is set to the login name.
 
 ## Visual Studio Code
 
 You can now test connecting to your Ubuntu host from [VS Code](/Visual_Studio_Code.md).
+
+## Github SSH Key
+
+Create an SSH Key that can be used for GitHub authentication. (See <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux>.)
+
+    ssh-keygen -t ed25519 -C "lgezelius@gmail.com"
+
+Save the key to ~/.ssh/id_ed25519. Enter a passphrase.
+
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+
+## Switch Versions
+
+Check version.
+
+    which ros2
+
+Update last lines of ~/.bash.rc
+
+    nano ~/.bash.rc
+
+Open new terminal:
+
+    which ros2
+    which rqt
+
+Possibly it is necessary to reinstall tf2.
+
+For Jazzy:
+
+    sudo apt-get install ros-jazzy-rviz2 ros-jazzy-turtle-tf2-py ros-jazzy-tf2-ros ros-jazzy-tf2-tools ros-jazzy-turtlesim
+
+For Rolling:
+
+    sudo apt-get install ros-rolling-rviz2 ros-rolling-turtle-tf2-py ros-rolling-tf2-ros ros-rolling-tf2-tools ros-rolling-turtlesim
+
+Now rebuild everything in workspaces that you are going to use.
+
+## Rebuild Everything
+
+If necessary, like when switch from jazzy to rolling:
+
+    cd ~/ros2_ws
+    rm -rf build/ install/ log/
+    colcon build
+    
